@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: robo_icms
+    restart: unless-stopped
+    ports:
+      - '3939:3939'
+    expose:
+      - '3939'
+    environment:
+      - TZ=America/Cuiaba
+      - FLASK_DEBUG=False
+      - PGHOST=${PGHOST:-localhost}
+      - PGPORT=${PGPORT:-5432}
+      - PGDATABASE=${PGDATABASE:-robo_icms}
+      - PGUSER=${PGUSER:-robo_icms_user}
+      - PGPASSWORD=${PGPASSWORD}

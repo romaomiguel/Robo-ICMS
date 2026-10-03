@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/script.js" defer></script>
+    <title>Processador de NFe</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Processador de NFe</h1>
+            <p>Faça upload dos seus arquivos XML de NFe e gere uma planilha Excel automaticamente</p>
+        </div>
+
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📁</div>
+            <div class="upload-text">Clique aqui ou arraste seus arquivos XML</div>
+            <div class="upload-subtext">Suporte para múltiplos arquivos XML</div>
+        </div>
+
+        <input type="file" id="fileInput" multiple accept=".xml">
+
+        <div class="file-list" id="fileList"></div>
+
+        <div class="progress-bar" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <span>Processando arquivos...</span>
+        </div>
+
+        <div class="message" id="message"></div>
+
+        <button class="btn" id="processBtn" onclick="processFiles()" disabled>
+            Processar Arquivos
+        </button>
+
+        <button class="btn" id="clearBtn" onclick="clearFiles()">
+            Limpar Arquivos
+        </button>
+        
+        <button onclick="window.location.href='https://sefaz.local/'" class="btn">
+            Emitir guia
+        </button>
+    </div>
+</body>
+</html>
